@@ -18,7 +18,7 @@ export default class Sign_Up_Form extends Component {
             }
         };
         Accounts.createUser(user, (error) => {
-            FlowRouter.go('/home');
+            FlowRouter.go('/ideas');
             if(error){
                 console.log(error.reason);
             }
