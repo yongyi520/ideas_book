@@ -58,7 +58,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="275">
               <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
-              <folding />
+              <folding>
+                <marker date="1477465826304" expanded="true" signature="2317:2639" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -70,6 +72,8 @@
               <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <marker date="1477465237568" expanded="true" signature="176:1585" ph="{...}" />
+                <marker date="1477465237568" expanded="true" signature="198:1342" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -579,12 +583,12 @@
       <workItem from="1477284412040" duration="10082000" />
       <workItem from="1477306240977" duration="1813000" />
       <workItem from="1477371077621" duration="9099000" />
-      <workItem from="1477456899042" duration="13351000" />
+      <workItem from="1477456899042" duration="14398000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47185000" />
+    <option name="totallyTimeSpent" value="48232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="24" width="1366" height="744" extended-state="6" />
@@ -598,7 +602,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32935917" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="1.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -951,6 +955,8 @@
           <caret line="12" column="33" selection-start-line="12" selection-start-column="33" selection-end-line="12" selection-end-column="33" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
+            <marker date="1477465237568" expanded="true" signature="176:1585" ph="{...}" />
+            <marker date="1477465237568" expanded="true" signature="198:1342" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -977,7 +983,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="162" column="27" selection-start-line="162" selection-start-column="27" selection-end-line="162" selection-end-column="27" />
-          <folding />
+          <folding>
+            <marker date="1477465826304" expanded="true" signature="2317:2639" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
