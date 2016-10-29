@@ -16,16 +16,16 @@ import Idea_Edit from './ideas/Idea_Edit.jsx';
 
 import Test from './test/Test.jsx';
 
-FlowRouter.route('/test', {
-   action() {
-       mount(Home, {
-           content: {
-               sidebar: (<div></div>),
-               content: (<Test/>)
-           }
-       })
-   } 
-});
+// FlowRouter.route('/test', {
+//    action() {
+//        mount(Home, {
+//            content: {
+//                sidebar: (<div></div>),
+//                content: (<Test/>)
+//            }
+//        })
+//    } 
+// });
 
 FlowRouter.route('/', {
     action() {
