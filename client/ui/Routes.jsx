@@ -14,6 +14,19 @@ import Idea_Index from './ideas/Idea_Index.jsx';
 import Idea_Show from './ideas/Idea_Show.jsx';
 import Idea_Edit from './ideas/Idea_Edit.jsx';
 
+import Test from './test/Test.jsx';
+
+FlowRouter.route('/test', {
+   action() {
+       mount(Home, {
+           content: {
+               sidebar: (<div></div>),
+               content: (<Test/>)
+           }
+       })
+   } 
+});
+
 FlowRouter.route('/', {
     action() {
         mount(LandingPage, {

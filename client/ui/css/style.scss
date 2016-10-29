@@ -146,6 +146,17 @@ h1, h2, h3, h4, h5, h6, p {
   }
 }
 
+.btn-social {
+  &:hover {
+    background-color: $lightHighlight;
+    color: $white;
+  }
+  width: 6em;
+  border-radius: 5px;
+  padding: .5em;
+  margin-right: .3em;
+}
+
 .button_group {
   .sign_up_button {
     text-decoration: none;

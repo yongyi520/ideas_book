@@ -12,24 +12,42 @@ export default class Idea_Form extends Component {
         var note = this.refs.note.value;
         var implementation = this.refs.implementation.value;
 
-        var idea = {
-            userid: Meteor.userId(),
-            category: category.toLowerCase(),
-            name: name,
-            purpose: purpose,
-            features: features,
-            note: note,
-            implementation: implementation,
-            createdAt: new Date()
-        };
-
-        Meteor.call('register-new-idea', idea, (error)=>{
-            if (error) {
-                console.log(error.reason);
+        var files = this.refs.image_upload.files;
+        var image_array = [];
+        return Cloudinary.upload(files, {
+            api_key: '349722997657141'
+        }, (err, res) => {
+            if (err) {
+                console.log(err);
             } else {
-                FlowRouter.go('/ideas');
+
+                image = {
+                    public_id: res.public_id,
+                    url: res.url
+                };
+                image_array.push(image);
+                var idea = {
+                    userid: Meteor.userId(),
+                    category: category.toLowerCase(),
+                    name: name,
+                    purpose: purpose,
+                    features: features,
+                    note: note,
+                    image: image_array,
+                    implementation: implementation,
+                    createdAt: new Date()
+                };
+
+                Meteor.call('register-new-idea', idea, (error)=>{
+                    if (error) {
+                        console.log(error.reason);
+                    } else {
+                        FlowRouter.go('/ideas');
+                    }
+                });
             }
         });
+
 
     }
 
@@ -74,6 +92,11 @@ export default class Idea_Form extends Component {
                             <div className="form-group">
                                 <label> Creator's Note </label>
                                 <textarea ref="note" placeholder="Anything else?" className="form-control"></textarea>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Designs</label>
+                                <input type="file" ref="image_upload" className="form-control"/>
                             </div>
 
                             <div className="form-group">

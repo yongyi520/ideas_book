@@ -1,8 +1,23 @@
 import React, {Component} from 'react';
 
 import Footer from '../footer/Footer.jsx';
+import gsap from 'gsap';
+
 
 export default class Body_Landing extends Component {
+
+    componentDidMount(){
+        var timeline = new TimelineLite();
+        timeline.from(".content_wrapper", 1, {
+            autoAlpha: 0,
+            y: 50,
+            delay: .75
+        }).to(".content_wrapper", .01, {
+            autoAlpha: 1,
+            y: 0
+        });
+    }
+
     render(){
         return (
             <div className="content_wrapper">

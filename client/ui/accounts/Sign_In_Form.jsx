@@ -15,7 +15,30 @@ export default class Sign_In_Form extends Component {
         })
     }
 
+    loginWithFacebook(e) {
+        Meteor.loginWithFacebook({}, (error) => {
+            if (error) {
+                throw new Meteor.Error("Facebook Login Failed");
+            }
+            FlowRouter.go('/ideas');
+        });
+
+    }
+
+    loginWithGoogle(e) {
+        Meteor.loginWithGoogle({}, (error) => {
+            if (error) {
+                throw new Meteor.Error("Google Login Failed");
+            }
+            FlowRouter.go('/ideas');
+        })
+    }
+
+
+    
+
     render(){
+
         return (
             <div className="collapse navbar-collapse row" id="navbar">
                 <form onSubmit={this.handleSubmit.bind(this)} role="form" id="signin" className="navbar-form navbar-right">
@@ -33,6 +56,17 @@ export default class Sign_In_Form extends Component {
                     </div>
                     <button type="submit" className="btn btn-custom">Log In </button>
                 </form>
+
+                <div className="collapse navbar-collapse row" id="navbar">
+                    <div className="button_group navbar-right">
+                        <button onClick={this.loginWithFacebook.bind(this)} className="navbar-form btn-social">
+                            <i className="fa fa-facebook"></i>    Log In
+                        </button>
+                        <button onClick={this.loginWithGoogle.bind(this)} className="navbar-form btn-social">
+                            <i className="fa fa-google-plus"></i>    Log In
+                        </button>
+                    </div>
+                </div>
             </div>
         )
     }

@@ -16,7 +16,7 @@ class Idea_Edit extends Component {
         var features = this.refs.features.value;
         var note = this.refs.note.value;
         var implementation = this.refs.implementation.value;
-
+        
         var idea = {
             _id: this.props.id,
             userid: Meteor.userId(),
@@ -36,6 +36,26 @@ class Idea_Edit extends Component {
             }
         });
 
+    }
+
+    displayImages(images){
+
+        if(images){
+
+            var displayImages = images.map((image) => {
+                return (
+                    <a href={image.url} key={image.public_id} target="_blank">
+                        <img src={image.url} width="150"/>
+                    </a>
+                )
+            });
+            console.log(displayImages);
+            return (
+                <div className="row">
+                    {displayImages}
+                </div>
+            )
+        }
     }
 
     render() {
@@ -78,6 +98,12 @@ class Idea_Edit extends Component {
                             <div className="form-group">
                                 <label> Creator's Note </label>
                                 <textarea ref="note" className="form-control" defaultValue={idea.note}></textarea>
+                            </div>
+
+                            <div className="form-group">
+                                <label>Designs</label>
+                                {this.displayImages(idea.image)}
+                                <input type="file" ref="image_upload" className="form-control"/>
                             </div>
 
                             <div className="form-group">

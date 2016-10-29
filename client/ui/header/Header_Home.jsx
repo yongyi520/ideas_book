@@ -2,8 +2,17 @@ import React, {Component} from 'react';
 
 import { composeWithTracker } from 'react-komposer';
 
+import gsap from 'gsap';
 
 class Header_Home extends Component {
+
+    componentDidMount(){
+        var timeline = new TimelineLite();
+        timeline.from("#wrapper", 1, {
+            x: -20,
+            autoAlpha: 0
+        });
+    }
 
     logout(e) {
         e.preventDefault();
@@ -13,7 +22,8 @@ class Header_Home extends Component {
 
     displayName(){
         if(Meteor.user()){
-            return <p>Welcome, {Meteor.user().profile.firstname}</p>;
+
+            return (Meteor.user().profile.name)?<p>Welcome, {Meteor.user().profile.name}</p>:<p>Welcome, {Meteor.user().profile.firstname}</p>;
         } else {
             return <p> Loading ... </p>;
         }

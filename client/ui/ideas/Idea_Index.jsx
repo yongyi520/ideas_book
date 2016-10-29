@@ -3,13 +3,33 @@ import { composeWithTracker } from 'react-komposer';
 
 import Idea_Box from '../ideas/Idea_Box.jsx';
 
+import gsap from 'gsap';
 
 class Idea_Show extends Component {
+    
+    componentDidMount(){
+        var timeline = new TimelineLite();
+        timeline.from(".content_index", 1, {
+            autoAlpha: 0,
+            delay: 1
+        }).to(".content_index", .01, {
+            autoAlpha: 1
+        });
+    }
+
+    componentWillUpdate(){
+        var timeline = new TimelineLite();
+        timeline.from(".content_index", 1, {
+            autoAlpha: 0,
+            delay: 1
+        }).to(".content_index", .01, {
+            autoAlpha: 1
+        });
+    }
+    
     getIdeaContent(){
         let ideaContent = [];
         let ideas;
-        console.log(this.props.category);
-        console.log(this.props.ideas.find().fetch());
         if (this.props.category){
             ideas = this.props.ideas.find(this.props.category).fetch();
         } else {

@@ -13,6 +13,26 @@ class Idea_Show extends Component {
         FlowRouter.go('/ideas');
     }
 
+    displayImages(images){
+
+        if(images){
+
+            var displayImages = images.map((image) => {
+                return (
+                    <a href={image.url} key={image.public_id} target="_blank">
+                        <img src={image.url} width="150"/>
+                    </a>
+                )
+            });
+            console.log(displayImages);
+            return (
+                <div className="row">
+                    {displayImages}
+                </div>
+            )
+        }
+    }
+
     render(){
 
         let idea = this.idea();
@@ -35,6 +55,11 @@ class Idea_Show extends Component {
                 <div className="content_individual_box">
                     <h2>Creator's Note</h2>
                     <p>{idea.note}</p>
+                </div>
+
+                <div className="content_individual_box">
+                    <h2>Designs</h2>
+                    {this.displayImages(idea.image)}
                 </div>
 
                 <div className="content_individual_box">

@@ -14,7 +14,8 @@ export default class Sign_Up_Form extends Component {
             profile: {
                 fullname: (first_name + last_name).toLowerCase(),
                 firstname: first_name,
-                lastname: last_name
+                lastname: last_name,
+                name: first_name
             }
         };
         Accounts.createUser(user, (error) => {

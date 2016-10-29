@@ -6,7 +6,8 @@
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
-    "meteor-node-stubs": "~0.2.0",
+    "gsap": "^1.19.0",
+    "meteor-node-stubs": "^0.2.3",
     "react": "^15.3.2",
     "react-dom": "^15.3.2",
     "react-komposer": "^1.13.1",
