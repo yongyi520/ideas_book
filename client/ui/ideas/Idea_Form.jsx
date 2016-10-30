@@ -14,40 +14,64 @@ export default class Idea_Form extends Component {
 
         var files = this.refs.image_upload.files;
         var image_array = [];
-        return Cloudinary.upload(files, {
-            api_key: '349722997657141'
-        }, (err, res) => {
-            if (err) {
-                console.log(err);
-            } else {
 
-                image = {
-                    public_id: res.public_id,
-                    url: res.url
-                };
-                image_array.push(image);
-                var idea = {
-                    userid: Meteor.userId(),
-                    category: category.toLowerCase(),
-                    name: name,
-                    purpose: purpose,
-                    features: features,
-                    note: note,
-                    image: image_array,
-                    implementation: implementation,
-                    createdAt: new Date()
-                };
+        if (files.length > 0) {
+            return Cloudinary.upload(files, {
+                api_key: '349722997657141'
+            }, (err, res) => {
+                console.log("hello from inside upload callback");
+                if (err) {
+                    console.log(err);
+                } else {
 
-                Meteor.call('register-new-idea', idea, (error)=>{
-                    if (error) {
-                        console.log(error.reason);
-                    } else {
-                        FlowRouter.go('/ideas');
-                    }
-                });
-            }
-        });
+                    image = {
+                        public_id: res.public_id,
+                        url: res.url
+                    };
+                    image_array.push(image);
+                    var idea = {
+                        userid: Meteor.userId(),
+                        category: category.toLowerCase(),
+                        name: name,
+                        purpose: purpose,
+                        features: features,
+                        note: note,
+                        image: image_array,
+                        implementation: implementation,
+                        createdAt: new Date()
+                    };
 
+                    Meteor.call('register-new-idea', idea, (error)=> {
+                        if (error) {
+                            console.log(error.reason);
+                        } else {
+                            FlowRouter.go('/ideas');
+                        }
+                    });
+                }
+            });
+        } else {
+
+            var idea = {
+                userid: Meteor.userId(),
+                category: category.toLowerCase(),
+                name: name,
+                purpose: purpose,
+                features: features,
+                note: note,
+                image: image_array,
+                implementation: implementation,
+                createdAt: new Date()
+            };
+
+            return Meteor.call('register-new-idea', idea, (error)=> {
+                if (error) {
+                    console.log(error.reason);
+                } else {
+                    FlowRouter.go('/ideas');
+                }
+            });
+        }
 
     }
 
